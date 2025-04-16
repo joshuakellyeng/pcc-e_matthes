@@ -25,3 +25,110 @@
 #     print(f"\n{mult_of_ten} IS a multiple of 10.")
 # else:
 #     print(f"\n{mult_of_ten} IS NOT a multiple of 10.")
+
+# 7.4 Pizza Toppings
+
+# pizza_prompt = "What topping would you like on your pizza? \n"
+# pizza_promt += "Enter 'quit' when you are finished: \n"
+# active = True
+# while active:
+#     answer = input(pizza_prompt)
+
+#     if answer == 'quit':
+#         active = False
+#     else:
+#         print(f"\nAwesome! Adding {answer} to your pizza!\n")
+
+# 7.5 Movie TIckets
+
+# movie_prompt = f"Welcome to Atom Cinema!"
+# movie_prompt+= f"Please provide your age so that we can let you know the cost of your ticket: \n"
+
+# active = True
+# while True:
+#     ticket = 0
+#     age = input(movie_prompt)
+#  
+#     if age == 'quit':
+#       break  
+#     age = int(age)
+
+#     if age < 3:
+#         ticket = 0
+#     elif age < 13:
+#         ticket = 10
+#     else:
+#         ticket = 15
+    
+#     if ticket == 0:
+#         print(f"The ticket is FREE! Enjoy the show!")
+#     else:
+#         print(f"The price is {ticket} for your ticket! Enjoy the show!")
+
+# 7.6 Three Exits
+# a. use conditional test in while statement to stop loop
+
+# pizza_intro = "\nWelcome to Planet Pizza! Where we exclusive make extra large pies! \n"
+# pizza_intro += "Please let me know what topping you'd like on your pie! \n"
+# pizza_intro += "(Enter 'quit' to terminate the program.) \n"
+
+
+# answer = ''
+# while answer != 'quit':
+#     answer = input(pizza_intro)
+#     if answer != 'quit':
+#         print(f"\nWonderful choice! We'll add {answer} to your pie!\n")  
+    
+
+
+# b. use an active variable to control how long the loop runs.
+
+# movie_prompt = f"\nWelcome to Atom Cinema!"
+# movie_prompt+= f"\nPlease provide your age so that we can let you know the cost of your ticket: \n"
+# movie_prompt+= f"(Enter 'quit' to terminate the program)\n"
+
+# active = True
+# while active:
+#     ticket = 0
+#     age = input(movie_prompt)
+
+#     if age == 'quit':
+#         active = False
+#     else:
+#         age = int(age)
+#         if age < 3:
+#             ticket = 0
+#         elif age < 13:
+#             ticket = 10
+#         else:
+#             ticket = 15
+
+#         if ticket == 0:
+#             print(f"\nThe ticket is FREE! Enjoy the show!")
+#         else:
+#             print(f"\nThe price for your ticket is ${ticket}! Enjoy the show!")
+
+
+
+
+
+# c. use a break statement to exit the loop when the user enters a 'quit' value.
+
+# pizza_prompt = "What topping would you like on your pizza? \n"
+# pizza_prompt += "(Please enter 'quit' to terminate the program.) \n"
+
+# while pizza_prompt != 'quit':
+#     answer = input(pizza_prompt)
+#     if answer == 'quit':
+#         break
+#     else:
+#         print(f"\nAwesome! Adding {answer} to your pizza!\n")
+
+# 7.7 Infinity
+
+# message = 'Hello World!'
+# x = 1
+# while x < 5:
+#     print(message)
+#     x+=1
+
