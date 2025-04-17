@@ -126,9 +126,58 @@
 
 # 7.7 Infinity
 
+# This creates an infinite loop as the value of x never changes
+
 # message = 'Hello World!'
 # x = 1
 # while x < 5:
 #     print(message)
-#     x+=1
 
+# 7.8 Deli
+
+# sandwich_orders = ['BLT', 'reuben', 'bahn mi', 'cuban', 'philly cheesteak']
+# finished_sandwiches = []
+
+# while sandwich_orders:
+#     current_sandwich = sandwich_orders.pop()
+#     print(f"Order up! The {current_sandwich.title()} sandwich is ready!")
+#     finished_sandwiches.append(current_sandwich)
+
+# 7.9 No Pastrami
+
+# sandwich_orders = ['BLT', 'pastrami', 'reuben', 'bahn mi', 'pastrami', 'cuban', 'philly cheesteak', 'pastrami']
+# finished_sandwiches = []
+
+# print("Sorry! We are currently out of pastrami.")
+
+# while 'pastrami' in sandwich_orders:
+#     sandwich_orders.remove('pastrami')
+
+# print("\n")
+
+# while sandwich_orders:
+#     current_sandwich = sandwich_orders.pop()
+#     print(f"Order up! The {current_sandwich.title()} sandwich is in the works!")
+#     finished_sandwiches.append(current_sandwich)
+
+# print("\n")
+# for sandwich in finished_sandwiches:
+#     print(f"The {sandwich.title()} sandwich is ready!")
+
+
+# 7.10 Dream Vacation
+dream_vacations = {}
+
+vacations_active = True
+while vacations_active:
+    name = input("What's your name? ")
+    location = input("f you could visit one place in the world, where would you go? ")
+
+    dream_vacations[name] = location
+
+    repeat = input("Is there someone else who would like to submit their answer? ( yes/ no ) \n")
+    if repeat == 'no':
+        vacations_active = False
+print("--- Poll Results ---")
+for person, location in dream_vacations.items():
+    print(f"{person.title()} would like to vacation in {location.title()}.")
