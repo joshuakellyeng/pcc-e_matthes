@@ -1,8 +1,12 @@
 # Positional Arguments
+# Order matters when it comes to positional arguments
+
 # def describe_pet(animal_type, pet_name):
 #     """Display information about a pet."""
 #     print(f"\nI have a {animal_type}.")
 #     print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+# Multiple Function Calls
 
 # describe_pet('horse', 'roach')
 # describe_pet('direwolf', 'ghost')
@@ -14,11 +18,11 @@
 # describe_pet(pet_name="hootsie", animal_type="owlbear",)
 
 # Default Values
+# default values allow you to prepopulate parameters with a default value/argument, the default values can be overriden however if provided with a different argument when called
 
 def describe_pet( pet_name, animal_type = "dog"):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
     print(f"My {animal_type}'s name is {pet_name.title()}.")
 
-describe_pet('cody')
-# describe_pet('direwolf', 'ghost')
+describe_pet(pet_name="willie")
