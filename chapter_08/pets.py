@@ -26,3 +26,16 @@ def describe_pet( pet_name, animal_type = "dog"):
     print(f"My {animal_type}'s name is {pet_name.title()}.")
 
 describe_pet(pet_name="willie")
+
+# To override default values however you can simply do the following
+describe_pet(pet_name="harry", animal_type='hamster')
+
+# A dog named Willie
+# describe_pet('willie')
+# describe_pet(pet_name='willie')
+
+# A hamster named harry
+# describe_pet('harry','hamster')
+# describe_pet(pet_name='harry', animal_type='hamster')
+# describe_pet(animal_type='hamster', pet_name='harry')
+
