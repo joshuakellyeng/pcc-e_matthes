@@ -22,5 +22,14 @@ def show_completed_models(completed_models):
     for completed_model in completed_models:
         print(completed_model)  
     
-print_models(unprinted_designs, completed_models)
+
+# print_models(unprinted_designs, completed_models)
+# show_completed_models(completed_models)
+
+# Preventing a Function from Modifying a List
+# The slice notation [:] makes a copy of the list to send to the function.
+print_models(unprinted_designs[:], completed_models)
 show_completed_models(completed_models)
+
+print(unprinted_designs)
+print(completed_models)

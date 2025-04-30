@@ -61,36 +61,84 @@ city = city_country('porto', 'portugal')
 
 # 8.7 Album
 
-def make_album(artist_name, album_title, tracks=None):
-    album = {
-        'title': album_title.title(),
-        'artist': artist_name.title()
-    }
-    if tracks:
-        album['tracks'] = tracks
+# def make_album(artist_name, album_title, tracks=None):
+#     album = {
+#         'title': album_title.title(),
+#         'artist': artist_name.title()
+#     }
+#     if tracks:
+#         album['tracks'] = tracks
 
-    return album
+#     return album
 
-album = make_album("deftones", 'around the fur')    
-print(album)
+# album = make_album("deftones", 'around the fur')    
+# print(album)
 
-album = make_album("bad bunny", 'debi tirar mas fotos')
-print(album)
+# album = make_album("bad bunny", 'debi tirar mas fotos')
+# print(album)
 
-album = make_album('cleopatrick', 'doom',tracks=5)
-print(album)
+# album = make_album('cleopatrick', 'doom',tracks=5)
+# print(album)
 
 # 8.8 User Album
 
-while True:
-    print("\nWhat is your favorite album and whose it by?")
-    print("(enter 'q' at any time to QUIT)")
-    album_name = input("Album Name: ")
-    if album_name == 'q':
-        break
-    artist_name = input("Artist Name: ")
-    if artist_name == 'q':
-        break
-    album = make_album(artist_name,album_name)
-    print(f"\n{album}")
-print("\nThanks for responding!")
+# while True:
+#     print("\nWhat is your favorite album and whose it by?")
+#     print("(enter 'q' at any time to QUIT)")
+#     album_name = input("Album Name: ")
+#     if album_name == 'q':
+#         break
+#     artist_name = input("Artist Name: ")
+#     if artist_name == 'q':
+#         break
+#     album = make_album(artist_name,album_name)
+#     print(f"\n{album}")
+# print("\nThanks for responding!")
+
+# 8.9 Mwssages
+text_messages = ['Hello Friend', "Yo what's up!", "Good Morning!"]
+
+def show_messages(messages):
+    for message in messages:
+        print(message)
+
+# show_messages(text_messages)
+
+# 8.10 Sending Messages
+text_messages = ['Hello Friend', "Yo what's up!", "Good Morning!"]
+sent_messages = []
+
+def show_messages(messages):
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop()
+        print(f"Sending message: {current_message}")
+        sent_messages.append(current_message)
+
+# send_messages(text_messages, sent_messages)
+# print("Text Messages: ",text_messages)
+# print("Sent Messages: ",sent_messages)
+
+# 8.11 Archived Messages
+
+def show_messages(messages):
+    print("\nShowing all messages:")
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    print("\nSending all messages:")
+    while messages:
+        current_message = messages.pop()
+        print(f"Sending message: {current_message}")
+        sent_messages.append(current_message)
+
+show_messages(text_messages)
+send_messages(text_messages[:], sent_messages)
+
+print("\nFinal Lists:")
+print("Curr. Message List:", text_messages)
+print("Sent Message List:", sent_messages)
