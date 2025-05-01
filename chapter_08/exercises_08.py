@@ -142,3 +142,55 @@ send_messages(text_messages[:], sent_messages)
 print("\nFinal Lists:")
 print("Curr. Message List:", text_messages)
 print("Sent Message List:", sent_messages)
+
+# 8.12 Sandwiches
+
+def make_sandwich(*args):
+    """Prints a summary of the sandwich being ordered"""
+    print("\nThis customer wants the following on their sandwich:")
+    for arg in args:
+        print(f"- {arg}")
+
+make_sandwich('mayo', 'lettuce', 'tomato', 'bacon')
+make_sandwich('ham', 'egg')
+make_sandwich('tuna', 'cheese')
+
+# 8.13 User Profile
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+
+    return user_info
+
+user_profile = build_profile('Joshua', 'Kelly', class_type='artificer', proficiencies=["tinker's tools", 'arcana', 'sage'], languages=['python', 'javascript'])
+
+print("\n")
+# print(user_profile)
+
+# 8.14 Cars
+def make_car(make, model, **car_info):
+    """Build a dictionary containing everything we know about a car."""
+    car_info['make'] = make
+    car_info['model'] = model
+
+    return car_info
+
+car=make_car('subaru', 'outback', color='blue', tow_package=True)
+# print(car)
+
+# 8.15 Printing Models
+#  See `printing_functions.py`
+
+# 8.16 Imports
+
+# import person 
+# new_person = person.build_person('Ulfric','Stormcloak')
+
+# from person import build_person
+# new_person = build_person('Ulfric','Stormcloak')
+
+from person import build_person as bp
+new_person = bp('Ulfric', 'Stormcloak')
+
+print(new_person)
