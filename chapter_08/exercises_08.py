@@ -109,10 +109,12 @@ text_messages = ['Hello Friend', "Yo what's up!", "Good Morning!"]
 sent_messages = []
 
 def show_messages(messages):
+    """Prints messages from a list individually"""
     for message in messages:
         print(message)
 
 def send_messages(messages, sent_messages):
+    """Simulates the sending of a message from list and adds to a new list"""
     while messages:
         current_message = messages.pop()
         print(f"Sending message: {current_message}")
@@ -125,11 +127,13 @@ def send_messages(messages, sent_messages):
 # 8.11 Archived Messages
 
 def show_messages(messages):
+    """Prints messages from a list individually"""
     print("\nShowing all messages:")
     for message in messages:
         print(message)
 
 def send_messages(messages, sent_messages):
+    """Simulates the sending of a message from list and adds to a new list"""
     print("\nSending all messages:")
     while messages:
         current_message = messages.pop()
