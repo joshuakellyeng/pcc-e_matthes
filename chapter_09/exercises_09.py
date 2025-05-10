@@ -1,7 +1,7 @@
 # 9.1 Restaurants
 
 class Restaurant:
-    """A simple attempt to model a restaurant"""
+    """A simple attempt to model a restaurant."""
     def __init__(self, restaurant_name, cuisine_type):
         """Initialize restaurant name and cuisine type"""
         self.restaurant_name = restaurant_name
@@ -129,3 +129,12 @@ print("Current Login Attempts:",the_dunamancer.login_attempts)
 
 the_dunamancer.reset_login_attempts()
 print("Final Login Attempts:",the_dunamancer.login_attempts)
+
+# 9.6 Ice Cream Stand
+
+class IceCreamStand(Restaurant):
+    """A simple attempt to model an ice cream stand."""
+    def __init__(self, restaurant_name, cuisine_type='ice cream'):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = []
+
