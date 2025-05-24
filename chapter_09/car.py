@@ -1,6 +1,9 @@
 # Working with Classes and Instances
 # The Car Class
 
+# We include a module-level docstring that briefly describes the content of this module.
+"""A class that can be used to represent a car."""
+
 class Car:
     """A simple attempt to represent a car."""
 
@@ -42,7 +45,6 @@ class Car:
         else:
             print("You can't roll back an odometer!")
             
-
 # my_new_car = Car('audi', 'a4', 2024)
 # print(my_new_car.get_descriptive_name())
 # # Modifying Attribute Values
@@ -51,17 +53,17 @@ class Car:
 # my_new_car.update_odometer(26)
 # my_new_car.read_odometer()
 
-my_used_car = Car('subaru', 'outback', 2019)
-print(my_used_car.get_descriptive_name())
+# my_used_car = Car('subaru', 'outback', 2019)
+# print(my_used_car.get_descriptive_name())
 
-my_used_car.update_odometer(23_500)
-my_used_car.read_odometer()
+# my_used_car.update_odometer(23_500)
+# my_used_car.read_odometer()
 
-my_used_car.increment_odometer(100)
-my_used_car.read_odometer()
+# my_used_car.increment_odometer(100)
+# my_used_car.read_odometer()
 
-my_used_car.increment_odometer(-50)
-my_used_car.read_odometer()
+# my_used_car.increment_odometer(-50)
+# my_used_car.read_odometer()
 
 
 

@@ -1,3 +1,6 @@
+from user_module import User
+
+
 # 9.1 Restaurants
 
 class Restaurant:
@@ -28,45 +31,21 @@ class Restaurant:
 
 my_restaurant = Restaurant("saigon bistro", 'vietnamese' )
 
-print(my_restaurant.restaurant_name)
-print(my_restaurant.cuisine_type)
-my_restaurant.describe_restaurant()
-my_restaurant.open_restaurant()
+# print(my_restaurant.restaurant_name)
+# print(my_restaurant.cuisine_type)
+# my_restaurant.describe_restaurant()
+# my_restaurant.open_restaurant()
 
 # 9.2 Three Restaurants
 first_restaurant = Restaurant("harry's daughter", 'jamaican')
 second_restaurant = Restaurant("mini bar", 'spanish')
 third_restaurant = Restaurant('french toast', 'french southern fusion')
 
-first_restaurant.describe_restaurant()
-second_restaurant.describe_restaurant()
-third_restaurant.describe_restaurant()
+# first_restaurant.describe_restaurant()
+# second_restaurant.describe_restaurant()
+# third_restaurant.describe_restaurant()
 
 # 9.3 Users
-
-class User:
-    """A simple attempt to try and model a user."""
-    def __init__(self, first_name, last_name, class_type, country_of_origin):
-        """Initializing user and user data"""
-        self.first_name = first_name
-        self.last_name = last_name
-        self.class_type = class_type
-        self.country_of_origin = country_of_origin
-        self.login_attempts = 0
-
-    def describe_user(self):
-        print(f"Name: {self.first_name.title()} {self.last_name.title()}")
-        print(f"Class Type: {self.class_type.title()}")
-        print(f"Place of Origin: {self.country_of_origin.title()}")
-
-    def greet_user(self):
-        print(f"{self.first_name.title()} {self.last_name.title()} the {self.class_type.title()}, welcome.")
-
-    def increment_login_attempts(self):
-        self.login_attempts += 1
-
-    def reset_login_attempts(self):
-        self.login_attempts = 0
 
 the_monk = User('beauregard', 'lionette', 'monk of the cobalt soul', 'kamordah')
 the_wizard = User('caleb', 'widogast', 'wizard of transmutation', 'blumenthal')
@@ -76,59 +55,59 @@ the_cleric = User('cadeuces', 'clay', 'cleric of the grave', 'blooming grove')
 the_rogue = User('veth', 'brenatto', 'arcane trickster', 'felderwyn village')
 the_barbarian = User('yasha', 'nydoorin', 'barbarian of the zealot', 'xhorhas')
 
-the_monk.describe_user()
-the_monk.greet_user()
-print("\n")
+# the_monk.describe_user()
+# the_monk.greet_user()
+# print("\n")
 
-the_wizard.describe_user()
-the_wizard.greet_user()
-print("\n")
+# the_wizard.describe_user()
+# the_wizard.greet_user()
+# print("\n")
 
-the_paladin.describe_user()
-the_paladin.greet_user()
-print("\n")
+# the_paladin.describe_user()
+# the_paladin.greet_user()
+# print("\n")
 
-the_trickster.describe_user()
-the_trickster.greet_user()
-print("\n")
+# the_trickster.describe_user()
+# the_trickster.greet_user()
+# print("\n")
 
-the_cleric.describe_user()
-the_cleric.greet_user()
-print("\n")
+# the_cleric.describe_user()
+# the_cleric.greet_user()
+# print("\n")
 
-the_rogue.describe_user()
-the_rogue.greet_user()
-print("\n")
+# the_rogue.describe_user()
+# the_rogue.greet_user()
+# print("\n")
 
-the_barbarian.describe_user()
-the_barbarian.greet_user()
+# the_barbarian.describe_user()
+# the_barbarian.greet_user()
 
 
 # 9.4 Number Served
 
 restaurant = Restaurant('rumba cubana', 'cuban')
-restaurant.describe_restaurant()
-print("Numbers Served:", restaurant.number_served)
+# restaurant.describe_restaurant()
+# print("Numbers Served:", restaurant.number_served)
 
 # restaurant.number_served = 25_000
-restaurant.set_number_served(1001)
-print("Numbers Served:", restaurant.number_served)
+# restaurant.set_number_served(1001)
+# print("Numbers Served:", restaurant.number_served)
 
-restaurant.increment_number_served(336)
-print("Numbers Served:", restaurant.number_served)
+# restaurant.increment_number_served(336)
+# print("Numbers Served:", restaurant.number_served)
 
 # 9.5 Login Attempts
 
 the_dunamancer =User('essek', 'thelyss', 'wizard of dunamancy', 'xhorhas')
-print("Starting Login Attempts:",the_dunamancer.login_attempts)
+# print("Starting Login Attempts:",the_dunamancer.login_attempts)
 
 the_dunamancer.increment_login_attempts()
 the_dunamancer.increment_login_attempts()
 the_dunamancer.increment_login_attempts()
-print("Current Login Attempts:",the_dunamancer.login_attempts)
+# print("Current Login Attempts:",the_dunamancer.login_attempts)
 
 the_dunamancer.reset_login_attempts()
-print("Final Login Attempts:",the_dunamancer.login_attempts)
+# print("Final Login Attempts:",the_dunamancer.login_attempts)
 
 # 9.6 Ice Cream Stand
 
@@ -159,11 +138,6 @@ class Admin(User):
         super().__init__(first_name, last_name, class_type, country_of_origin)
         self.privileges = Privileges()
 
-    # def show_privileges(self):
-    #     """Display the privileges this administrator has."""
-    #     print("Admin Current Privileges: ")
-    #     for privilege in self.privileges:
-    #         print(f'- {privilege}')
 
 # m_tealeaf = Admin('mollymauk', 'tealeaf', 'bloodhunter', 'trostenwald')
 # m_tealeaf.privileges = ['can add post', 'can delete post', 'can ban user', 'can unban user', 'can lock threads', 'can unlock threads', 'can pin post', 'can unpin post']
@@ -276,12 +250,12 @@ class ElectricCar(Car):
 
 my_kona = ElectricCar('hyundai', 'kona', 2025)
 
-print("\n")
-print(my_kona.get_descriptive_name())
-my_kona.battery.describe_battery()
-my_kona.battery.get_range()
+# print("\n")
+# print(my_kona.get_descriptive_name())
+# my_kona.battery.describe_battery()
+# my_kona.battery.get_range()
 
-print(my_kona.get_descriptive_name())
-my_kona.battery.upgrade_battery()
-my_kona.battery.describe_battery()
-my_kona.battery.get_range()
+# print(my_kona.get_descriptive_name())
+# my_kona.battery.upgrade_battery()
+# my_kona.battery.describe_battery()
+# my_kona.battery.get_range()
