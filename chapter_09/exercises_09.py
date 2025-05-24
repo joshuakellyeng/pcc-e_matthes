@@ -138,3 +138,150 @@ class IceCreamStand(Restaurant):
         super().__init__(restaurant_name, cuisine_type)
         self.flavors = []
 
+    def show_flavors(self):
+        """A simple method that prints all flavors available."""
+        print("\nHere's a list of our current available flavors: ")
+        for flavor in self.flavors:
+            print(f"- {flavor.title()}")
+
+
+torico = IceCreamStand('torico')
+torico.flavors =['pistachio', 'vanilla', 'strawberry', 'chocolate', 'cookies and cream']
+
+# torico.describe_restaurant()
+# torico.show_flavors()
+
+# 9.7 Admin
+
+class Admin(User):
+    """A user with administrative privileges."""
+    def __init__(self, first_name, last_name, class_type, country_of_origin):
+        super().__init__(first_name, last_name, class_type, country_of_origin)
+        self.privileges = Privileges()
+
+    # def show_privileges(self):
+    #     """Display the privileges this administrator has."""
+    #     print("Admin Current Privileges: ")
+    #     for privilege in self.privileges:
+    #         print(f'- {privilege}')
+
+# m_tealeaf = Admin('mollymauk', 'tealeaf', 'bloodhunter', 'trostenwald')
+# m_tealeaf.privileges = ['can add post', 'can delete post', 'can ban user', 'can unban user', 'can lock threads', 'can unlock threads', 'can pin post', 'can unpin post']
+# m_tealeaf.show_privileges()
+
+# 9.8 Privileges
+class Privileges:
+    """A simple attemp to model admin privileges."""
+    def __init__(self, privileges =[]):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        """Display the privileges this administrator has."""
+        print(f"Admin Privilages: ")
+        if self.privileges:
+            for privilege in self.privileges:
+                print(f'- {privilege.title()}')
+        else:
+            print("User has no privileges.")
+
+k_mitnick = Admin('kevin', 'mitnick', 'artificer', 'united states')
+k_mitnick_priveleges = ['ham radios', 'social engineering', 'phone phreaking']
+k_mitnick.privileges.privileges = k_mitnick_priveleges
+
+# k_mitnick.describe_user()
+# k_mitnick.privileges.show_privileges()
+
+# 9.9 Battery Upgrade
+
+class Car:
+    """A simple attempt to represent a car."""
+
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+    
+    def update_odometer(self, mileage):
+        """
+        Set the odometer reading to the given value.
+        Reject the change if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+
+    def increment_odometer(self, miles):
+        """
+        Add the given amount to the odometer reading.
+        Reject the operation if it attempts submit a negative number.
+        """
+        if miles > 0:
+            self.odometer_reading += miles
+        else:
+            print("You can't roll back an odometer!")
+
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
+
+    def __init__(self, battery_size=40):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 40:
+            range = 150
+        elif self.battery_size == 65:
+            range = 225
+
+        print(f"This car can go about {range} miles on a full charge.")
+
+    def upgrade_battery(self):
+        if self.battery_size == 40:
+            self.battery_size = 65
+            print("Upgraded the battery to 65 kWh.")
+        else:
+            print("The battery is already upgraded.")
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+    # Defining Attributes and Methods for the Child Class
+    # def describe_battery(self):
+    #     """Print a statement describing the battery size."""
+    #     print(f"This car has a {self.battery_size}-kWh battery.")
+
+my_kona = ElectricCar('hyundai', 'kona', 2025)
+
+print("\n")
+print(my_kona.get_descriptive_name())
+my_kona.battery.describe_battery()
+my_kona.battery.get_range()
+
+print(my_kona.get_descriptive_name())
+my_kona.battery.upgrade_battery()
+my_kona.battery.describe_battery()
+my_kona.battery.get_range()
