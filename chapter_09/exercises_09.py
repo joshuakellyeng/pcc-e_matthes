@@ -259,3 +259,67 @@ my_kona = ElectricCar('hyundai', 'kona', 2025)
 # my_kona.battery.upgrade_battery()
 # my_kona.battery.describe_battery()
 # my_kona.battery.get_range()
+
+# 9.13 Dice
+from random import randint, choice
+
+class Die:
+
+    """A simple attempt at modeling a Die Roll"""
+    def __init__(self, die_size=6):
+        self.die_size = die_size
+
+    def roll_die(self):
+        result = randint(1, self.die_size)
+        print(f"D{self.die_size}: {result}")
+
+d20 = Die(20)
+d10 = Die(10)
+
+# d20.roll_die()
+# d10.roll_die()
+# print("\n")
+# d20.roll_die()
+# d10.roll_die()
+# print("\n")
+# d20.roll_die()
+# d10.roll_die()
+# print("\n")
+# d20.roll_die()
+# d10.roll_die()
+# print("\n")
+# d20.roll_die()
+# d10.roll_die()
+
+# 9.14 Lottery
+
+lottery = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E']
+
+def ticket_generator(lottery):
+    winning_ticket = ''
+    for x in range(4):
+        char = choice(lottery)
+        winning_ticket+=str(char)
+    # print(f"Ticket Number: {winning_ticket} is today's WINNER!")
+    return winning_ticket
+
+# ticket_generator(lottery)
+
+# 9.15 Lottery Analysis
+
+my_ticket = ticket_generator(lottery)
+# print(my_ticket)
+
+def lottery_analysis(ticket_value, lottery):
+    winning_ticket = ''
+    count = 0
+    while ticket_value != winning_ticket:
+        winning_ticket = ticket_generator(lottery)
+        count += 1
+    message = f"It took {count} times for your ticket: {ticket_value} to match the winning ticket: {winning_ticket}!"
+    return message
+
+print(lottery_analysis(my_ticket,lottery))
+
+# 9.16 Python Module of the Week
+# https://pymotw.com/3/random/index.html
