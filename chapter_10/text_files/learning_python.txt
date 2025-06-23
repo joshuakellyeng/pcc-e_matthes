@@ -1,0 +1,3 @@
+In Python you can create classes that serve as templates to represent anything from data to real world object.
+In Python you can traverse large datasets rapidly.
+In Python you can create, read and modify data.
